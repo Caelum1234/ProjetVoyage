@@ -1,0 +1,77 @@
+CREATE TABLE Circuit(
+   Id_Circ INT,
+   Descri VARCHAR(50),
+   Ville_Dep VARCHAR(50),
+   Pays_Dep VARCHAR(50),
+   Pays_Arr VARCHAR(50),
+   Ville_Arr VARCHAR(50),
+   Date_Dep VARCHAR(50),
+   Nb_PlaceDisp INT,
+   Duree_Circ INT,
+   Prix_Insc DECIMAL(15,2),
+   PRIMARY KEY(Id_Circ)
+);
+
+CREATE TABLE Lieux_a_visiter(
+   NomLieu VARCHAR(50),
+   Ville_Et VARCHAR(50),
+   Pays_Et VARCHAR(50),
+   Descriptif VARCHAR(50) NOT NULL,
+   Prix_visite DECIMAL(15,2) NOT NULL,
+   PRIMARY KEY(NomLieu, Ville_Et, Pays_Et)
+);
+
+CREATE TABLE Role(
+   IdRole INT,
+   LibelleRole VARCHAR(50),
+   PRIMARY KEY(IdRole)
+);
+
+CREATE TABLE Etape(
+   Id_Circ INT,
+   Ordre INT,
+   Nom_Lieu VARCHAR(50),
+   Ville_Et VARCHAR(50),
+   Date_Et DATETIME,
+   Duree_Et DATETIME,
+   Pays_Et VARCHAR(50),
+   NomLieu VARCHAR(50) NOT NULL,
+   Ville_Et_1 VARCHAR(50) NOT NULL,
+   Pays_Et_1 VARCHAR(50) NOT NULL,
+   PRIMARY KEY(Id_Circ, Ordre),
+   FOREIGN KEY(Id_Circ) REFERENCES Circuit(Id_Circ),
+   FOREIGN KEY(NomLieu, Ville_Et_1, Pays_Et_1) REFERENCES Lieux_a_visiter(NomLieu, Ville_Et, Pays_Et)
+);
+
+CREATE TABLE Utilisateur(
+   IdUtilisateur INT,
+   mdp VARCHAR(50),
+   mail VARCHAR(50),
+   IdRole INT NOT NULL,
+   PRIMARY KEY(IdUtilisateur),
+   FOREIGN KEY(IdRole) REFERENCES Role(IdRole)
+);
+
+CREATE TABLE Client(
+   Id_Client INT,
+   Nom VARCHAR(50) NOT NULL,
+   Prenom VARCHAR(50) NOT NULL,
+   Date_Naissance VARCHAR(50) NOT NULL,
+   IdUtilisateur INT NOT NULL,
+   PRIMARY KEY(Id_Client),
+   UNIQUE(IdUtilisateur),
+   FOREIGN KEY(IdUtilisateur) REFERENCES Utilisateur(IdUtilisateur)
+);
+
+CREATE TABLE Reservation(
+   Id_Circ INT,
+   Id_Client INT,
+   date_reserv DATE NOT NULL,
+   Prix_tot DECIMAL(15,2) NOT NULL,
+   IdReserv INT NOT NULL,
+   Nb_places INT NOT NULL,
+   PRIMARY KEY(Id_Circ, Id_Client),
+   UNIQUE(IdReserv),
+   FOREIGN KEY(Id_Circ) REFERENCES Circuit(Id_Circ),
+   FOREIGN KEY(Id_Client) REFERENCES Client(Id_Client)
+);
