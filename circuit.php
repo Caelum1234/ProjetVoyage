@@ -20,6 +20,7 @@ class circuit {
         $this->Id_Circ = $Id_Circ;
         $this->Descrip = $Descrip;
         $this->Ville_Dep = $Ville_Dep;
+        $this->Pays_Dep = $Pays_Dep;
         $this->Pays_Arr = $Pays_Arr;
         $this->Ville_Arr = $Ville_Arr;
         $this->Date_Dep = $Date_Dep;
