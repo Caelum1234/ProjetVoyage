@@ -38,6 +38,9 @@ class circuit {
     public function getVilleDep(){
         return $this->Ville_Dep;
     }
+    public function getPaysDep(){
+        return $this->Pays_Dep;
+    }
     public function getPaysArr(){
         return $this->Pays_Arr;
     }
