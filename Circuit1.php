@@ -1,7 +1,25 @@
 <?php 
 
-// require('circuit.php');
+ // require('circuit.php');
  require_once('includes/header.php');
+  // se connecter à la base de données
+  $con = mysqli_connect("localhost", "root", "", "IHM_Gaber");
+  // vérifier la connexion
+  if (mysqli_connect_errno()) {
+    echo "Échec de la connexion : " . mysqli_connect_error();
+    exit();
+  }
+
+  // exécuter la requête SQL pour récupérer les données de la table circuit
+$sql = "SELECT * FROM circuit";
+$result = mysqli_query($con, $sql);
+// vérifier la requête
+if (!$result) {
+  echo "Erreur : " . mysqli_error($con);
+  exit();
+}
+// afficher la liste des circuits
+echo "<ul>";
 
 ?> 
 
@@ -47,6 +65,36 @@
     </div>
   </div>
 </header>
+
+<?php
+
+$row = mysqli_fetch_assoc($result);
+$id = $row["Id_Circ"];
+$descri = $row["Descri"];
+$villeDep = $row["Ville_Dep"];
+$paysDep = $row["Pays_Dep"];
+$paysArr = $row["Pays_Arr"];
+$villeArr = $row["Ville_Arr"];
+$dateDep = $row["Date_Dep"];
+$nbPlaceDisp = $row["Nb_PlaceDisp"];
+$dureeCirc = $row["Duree_Circ"];
+$prixInsc = $row["Prix_Insc"];
+
+echo "<li>";
+echo "<h3>$id</h3>";
+echo "<p>Description : $descri</p>";
+echo "<p>Ville de départ : $villeDep</p>";
+echo "<p>Pays de départ : $paysDep</p>";
+echo "<p>Ville d'arrivée : $villeArr</p>";
+echo "<p>Pays d'arrivée : $villeArr</p>";
+echo "<p>Nombre de place disponibles : $nbPlaceDisp</p>";
+echo "<p>Durée du circuit : $dureeCirc minutes</p>";
+echo "<p>Prix d'inscription : $prixInsc €</p>";
+echo "</li>";
+echo "</ul>";
+// fermer la connexion
+mysqli_close($con);
+?>
 
 <main>
 

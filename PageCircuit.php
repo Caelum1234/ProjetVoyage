@@ -52,7 +52,7 @@ if(isset($_SESSION['idRole'])){
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Bienvenu chez EPSI Travel !</h1>
+        <h1 class="fw-light">Bienvenue chez EPSI Travel !</h1>
         <p class="lead text-body-secondary">Voici tous les circuits touristiques proposés par notre agence.</p>
         <p>
           <a href="#" class="btn btn-primary my-2">Voir mes circuits réservés</a>
@@ -61,102 +61,73 @@ if(isset($_SESSION['idRole'])){
     </div>
   </section>
 
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
+<?php 
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Circuit 1" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Circuit 1</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 1</text></svg>
-            <div class="card-body">
-              <p class="card-text">Circuit 1 de "" à ""</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                <form action="Circuit1.php">
-                  <button type="submit" class="btn btn-sm btn-outline-secondary">Voir</button>
-                </form>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 2</text></svg>
-            <div class="card-body">
-              <p class="card-text">Circuit 2 de "" à ""</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 3</text></svg>
-            <div class="card-body">
-              <p class="card-text">Circuit 3 de "" à ""</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+// require('circuit.php');
+ require_once('includes/header.php');
+  // se connecter à la base de données
+  $con = mysqli_connect("localhost", "root", "", "IHM_Gaber");
+  // vérifier la connexion
+  if (mysqli_connect_errno()) {
+    echo "Échec de la connexion : " . mysqli_connect_error();
+    exit();
+  }
 
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 4</text></svg>
-            <div class="card-body">
-              <p class="card-text">Circuit 4 de "" à ""</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 5</text></svg>
-            <div class="card-body">
-              <p class="card-text">Circuit 5 de "" à ""</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 6</text></svg>
-            <div class="card-body">
-              <p class="card-text">Circuit 6 de "" à ""</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  // exécuter la requête SQL pour récupérer les données de la table circuit
+$sql = "SELECT * FROM circuit";
+$result = mysqli_query($con, $sql);
+// vérifier la requête
+if (!$result) {
+  echo "Erreur : " . mysqli_error($con);
+  exit();
+}
+// afficher la liste des circuits
+echo "<ul>";
+// parcourir les résultats de la requête
+while ($row = mysqli_fetch_assoc($result)) {
+  // stocker les données du circuit dans des variables
+  $id = $row["Id_Circ"];
+  $descri = $row["Descri"];
+  $villeDep = $row["Ville_Dep"];
+  $paysDep = $row["Pays_Dep"];
+  $paysArr = $row["Pays_Arr"];
+  $villeArr = $row["Ville_Arr"];
+  $dateDep = $row["Date_Dep"];
+  $nbPlaceDisp = $row["Nb_PlaceDisp"];
+  $dureeCirc = $row["Duree_Circ"];
+  $prixInsc = $row["Prix_Insc"];
+  // convertir l'image en une chaîne de caractères
+  //$image_data = base64_encode($image);
+  // afficher les données du circuit dans un élément HTML
+  echo "<li>";
+  echo "<h3>$id</h3>";
+  echo "<p>Description : $descri</p>";
+  echo "<p>Ville de départ : $villeDep</p>";
+  echo "<p>Pays de départ : $paysDep</p>";
+  echo "<p>Ville d'arrivée : $villeArr</p>";
+  echo "<p>Pays d'arrivée : $villeArr</p>";
+  echo "<p>Date de départ : $dateDep</p>";
+  echo "<p>Nombre de place disponibles : $nbPlaceDisp</p>";
+  echo "<p>Durée du circuit : $dureeCirc minutes</p>";
+  echo "<p>Prix d'inscription : $prixInsc €</p>";
+  echo "<form action='Circuit$id.php'>
+          <button type='submit' class='btn btn-sm btn-outline-secondary'>Voir</button>
+        </form>";
+  echo "<button>Réserver</button>";
+  echo "</li>";
+}
+echo "</ul>";
+// fermer la connexion
+mysqli_close($con);
+?>
 
-</main>
+
+
+    
+
+
+
+  
 
 
 <?php require_once('includes/footer.php'); ?>
