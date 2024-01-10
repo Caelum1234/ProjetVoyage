@@ -28,7 +28,7 @@
         <div class="col-sm-4 offset-md-1 py-4">
           <ul class="list-unstyled">
             <li><a href="#" class="text-white">Mon compte</a></li>
-            <li><a href="#" class="text-white">Contactez nous</a></li>
+            <li><a href="#" class="text-white">Gestion des utilisateurs</a></li>
             <li><a href="#" class="text-white">Se déconnecter</a></li>
           </ul>
         </div>
@@ -53,11 +53,10 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Bienvenu chez EPSI Travel !</h1>
-        <p class="lead text-body-secondary">Voici tous les circuits touristiques proposés par notre agence.</p>
-        <p>
+        <h1 class="fw-light">Page admin</h1>
+        <!-- <p>
           <a href="#" class="btn btn-primary my-2">Voir mes circuits réservés</a>
-        </p>
+        </p> -->
       </div>
     </div>
   </section>
@@ -73,10 +72,9 @@
               <p class="card-text">Circuit 1 de "" à ""</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                <form action="Circuit1.php">
-                  <button type="submit" class="btn btn-sm btn-outline-secondary">Voir</button>
-                </form>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
                 </div>
               </div>
             </div>
@@ -90,7 +88,8 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
                 </div>
               </div>
             </div>
@@ -104,7 +103,8 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
                 </div>
               </div>
             </div>
@@ -119,7 +119,8 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
                 </div>
               </div>
             </div>
@@ -133,7 +134,8 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
                 </div>
               </div>
             </div>
@@ -147,7 +149,8 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
                 </div>
               </div>
             </div>
