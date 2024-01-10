@@ -6,10 +6,10 @@ class Utilisateur {
     private $mdp;
     private $role;
 
-    function __construct($Id_Utilisateur, $login, $Mdp, $role){
+    function __construct($Id_Utilisateur, $mail, $mdp, $role){
         $this->Id_Utilisateur = $Id_Utilisateur;
-        $this->login = $login;
-        $this->Mdp = $Mdp;
+        $this->mail = $mail;
+        $this->mdp = $mdp;
         $this->role = $role;
     }
 
@@ -18,10 +18,10 @@ class Utilisateur {
         return $this->Id_Utilisateur;
     }
     public function getMail(){
-        return $this->Mail;
+        return $this->mail;
     }
     public function getMdp(){
-        return $this->Mdp;
+        return $this->mdp;
     }
 
     public function setId_Utilisateur($id){
@@ -39,7 +39,7 @@ class Utilisateur {
         require('server_db.php');
 
         $queryUser = $connexion->prepare('SELECT * FROM circuit WHERE mail = ? AND mdp = ?');
-        $queryUser->execute([$this->getlogin(),$this->getMdp()]);
+        $queryUser->execute([$this->getMail(),$this->getMdp()]);
         $toto = $queryUser->fetch();
         if(!empty($toto['Id_Utilisateur'])){
             $this->setId_Utilisateur($toto['Id_Utilisateur']);

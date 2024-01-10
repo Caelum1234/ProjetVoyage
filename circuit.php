@@ -61,10 +61,6 @@ class circuit {
     }
 
 
-    public function checkCircuit() {
-        
-    }
-
 }
 
 
