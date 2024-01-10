@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 10 jan. 2024 à 08:20
+-- Généré le : mer. 10 jan. 2024 à 09:38
 -- Version du serveur : 8.0.31
--- Version de PHP : 8.2.0
+-- Version de PHP : 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `circuit`;
 CREATE TABLE IF NOT EXISTS `circuit` (
   `Id_Circ` int NOT NULL,
-  `Descri` varchar(50) DEFAULT NULL,
+  `Descri` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `Ville_Dep` varchar(50) DEFAULT NULL,
   `Pays_Dep` varchar(50) DEFAULT NULL,
   `Pays_Arr` varchar(50) DEFAULT NULL,
@@ -47,12 +47,12 @@ CREATE TABLE IF NOT EXISTS `circuit` (
 --
 
 INSERT INTO `circuit` (`Id_Circ`, `Descri`, `Ville_Dep`, `Pays_Dep`, `Pays_Arr`, `Ville_Arr`, `Date_Dep`, `Nb_PlaceDisp`, `Duree_Circ`, `Prix_Insc`) VALUES
-(1, 'Long term (current) use of inhaled steroids', 'Créteil', 'France', 'Croatia', 'Lovran', '2/20/2023', 98, 106, '31.00'),
-(2, 'Crushing injury of lower leg', 'Khuean Ubonrat', 'Thailand', 'Croatia', 'Postira', '9/1/2023', 98, 94, '91.00'),
-(3, 'Passenger of amblnc/fire eng injured in traf, subs', 'Zhishan', 'China', 'Vietnam', 'Long Hồ', '11/23/2023', 72, 208, '45.00'),
-(4, 'Neoplasm of uncertain behavior of prostate', 'Majayjay', 'Philippines', 'France', 'Bourges', '4/26/2023', 63, 202, '36.00'),
-(5, 'Nondisp fx of olecran pro w intartic extn r ulna, ', 'Estarreja', 'Portugal', 'Japan', 'Yuza', '12/19/2023', 66, 87, '69.00'),
-(6, 'Dome fracture of acetabulum', 'Tamamura', 'Japan', 'China', 'Yueyahe', '6/28/2023', 59, 92, '49.00');
+(1, 'Circuit au départ de Créteil en France jusqu\'à Lovran en Croatie', 'Créteil', 'France', 'Croatie', 'Lovran', '2/20/2023', 98, 106, '31.00'),
+(2, 'Circuit au départ de Khuean en Thailand jusqu\'à Postira en Croatie', 'Khuean Ubonrat', 'Thailande', 'Croatie', 'Postira', '9/1/2023', 98, 94, '91.00'),
+(3, 'Circuit au départ de Zhishan en China jusqu\'à Long Hồ au Vietnam', 'Zhishan', 'Chine', 'Vietnam', 'Long Hồ', '11/23/2023', 72, 208, '45.00'),
+(4, 'Circuit au départ de Majayjay au Philippines jusqu\'à Bourges en France', 'Majayjay', 'Philippines', 'France', 'Bourges', '4/26/2023', 63, 202, '36.00'),
+(5, 'Circuit au départ de Estarreja au Portugal jusqu\'à Yuza au Japon', 'Estarreja', 'Portugal', 'Japon', 'Yuza', '12/19/2023', 66, 87, '69.00'),
+(6, 'Circuit au départ de Tamamura au Japon jusqu\'à Yueyahe en Chine', 'Tamamura', 'Japon', 'Chine', 'Yueyahe', '6/28/2023', 59, 92, '49.00');
 
 -- --------------------------------------------------------
 
@@ -102,12 +102,12 @@ CREATE TABLE IF NOT EXISTS `etape` (
 --
 
 INSERT INTO `etape` (`Id_Circ`, `Ordre`, `Date_Et`, `Duree_Et`, `NomLieu`, `Ville_Et`, `Pays_Et`) VALUES
-(1, 1, '2024-03-05 09:08:45', '2024-03-07 09:08:45', 'Primulaceae', 'Woto', 'Indonesia'),
-(2, 2, '2024-01-10 09:11:56', '2024-01-12 09:11:56', 'Roseaceae', 'Kisasa', 'Tanzania'),
-(3, 3, '2024-12-01 09:11:56', '2024-12-04 09:11:56', 'Pertubarea', 'Šentvid pri Stični', 'Slovenia'),
-(4, 4, '2024-04-28 09:11:56', '2024-05-04 09:11:56', 'Fumariaceae', 'Dan Makham Tia', 'Thailand'),
-(5, 5, '2024-12-20 09:11:56', '2024-12-30 09:11:56', 'Polygalaceae', 'San Carlos', 'Argentina'),
-(6, 6, '2024-06-29 09:11:56', '2024-07-10 09:11:56', 'Ranunculaceae', 'Manhush', 'Ukraine');
+(1, 1, '2024-03-05 09:08:45', '2024-03-07 09:08:45', 'Primulaceae', 'Woto', 'Indonésie'),
+(1, 2, '2024-01-10 09:11:56', '2024-01-12 09:11:56', 'Roseaceae', 'Kisasa', 'Tanzanie'),
+(2, 1, '2024-12-01 09:11:56', '2024-12-04 09:11:56', 'Pertubarea', 'Šentvid pri Stični', 'Slovénie'),
+(2, 2, '2024-04-28 09:11:56', '2024-05-04 09:11:56', 'Fumariaceae', 'Dan Makham Tia', 'Thailande'),
+(3, 1, '2024-12-20 09:11:56', '2024-12-30 09:11:56', 'Polygalaceae', 'San Carlos', 'Argentine'),
+(3, 2, '2024-06-29 09:11:56', '2024-07-10 09:11:56', 'Ranunculaceae', 'Manhush', 'Ukraine');
 
 -- --------------------------------------------------------
 
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `lieux_a_visiter` (
   `NomLieu` varchar(50) NOT NULL,
   `Ville_Et` varchar(50) NOT NULL,
   `Pays_Et` varchar(50) NOT NULL,
-  `Descriptif` varchar(50) NOT NULL,
+  `Descriptif` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Prix_visite` decimal(15,2) NOT NULL,
   PRIMARY KEY (`NomLieu`,`Ville_Et`,`Pays_Et`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -130,18 +130,18 @@ CREATE TABLE IF NOT EXISTS `lieux_a_visiter` (
 --
 
 INSERT INTO `lieux_a_visiter` (`NomLieu`, `Ville_Et`, `Pays_Et`, `Descriptif`, `Prix_visite`) VALUES
-('Primulaceae', 'Jijiazhuang', 'China', 'Infections of cervix in pregnancy, second trimeste', '90.00'),
-('Rosaceae', 'Smithers', 'Canada', 'Sprain of other part of wrist and hand', '91.00'),
-('Pertusariaceae', 'Bandar-e Ganāveh', 'Iran', 'Ped w convey injured in clsn w 2/3-whl mv, unsp, s', '90.00'),
-('Fumariaceae', 'Shah Alam', 'Malaysia', 'Disp fx of left tibial spine, subs for clos fx w m', '95.00'),
-('Polygalaceae', 'Shajing', 'China', 'Nondisp fx of r ulna styloid pro, 7thE', '58.00'),
-('Ranunculaceae', 'Sainte-Marthe-sur-le-Lac', 'Canada', 'Unspecified dislocation of left foot, initial enco', '59.00'),
-('Ranunculaceae', 'Shchastya', 'Ukraine', 'Laceration w fb of r little finger w/o damage to n', '39.00'),
-('Hypnaceae', 'Rokycany', 'Czech Republic', 'Poisoning by macrolides, intentional self-harm', '11.00'),
-('Fabaceae', 'Juancheng', 'China', 'Oth fx upr & low end l fibula, 7thQ', '98.00'),
-('Dicranaceae', 'Zhouxi', 'China', 'Superficial foreign body, left hip, sequela', '43.00'),
-('Convolvulaceae', 'Darłowo', 'Poland', 'Sprain of other ligament of unspecified ankle, ini', '19.00'),
-('Caryophyllaceae', 'As Samawah', 'Iraq', 'Nondisp spiral fx shaft of r femr, 7thD', '16.00');
+('Primulaceae', 'Jijiazhuang', 'Chine', 'Visite de Primulaceae dans la ville de Jijiazhuang en Chine', '90.00'),
+('Rosaceae', 'Smithers', 'Canada', 'Visite de Rosaceae dans la ville de Smithers au Canada', '91.00'),
+('Pertusariaceae', 'Bandar-e Ganāveh', 'Iran', 'Visite de Pertusariaceae dans la ville de Bandar-e Ganāveh en Iran', '90.00'),
+('Fumariaceae', 'Shah Alam', 'Malaisie', 'Visite de Fumariaceae dans la ville de Shah Alam en Malaisie', '95.00'),
+('Polygalaceae', 'Shajing', 'Chine', 'Visite de Polygalaceae dans la ville de Shajing en Chine', '58.00'),
+('Ranunculaceae', 'Sainte-Marthe-sur-le-Lac', 'Canada', 'Visite de Ranunculaceae dans la ville de Sainte-Marthe-sur-le-Lac', '59.00'),
+('Ranunculaceae', 'Shchastya', 'Ukraine', 'Visite de Ranunculaceae dans la ville de Shchastya en Ukraine', '39.00'),
+('Hypnaceae', 'Rokycany', 'République tcheque', 'Visite de Hypnaceae dans la ville de Rokycany en République tcheque', '11.00'),
+('Fabaceae', 'Juancheng', 'Chine', 'Visite de Fabaceae dans la ville de Juancheng en Chine', '98.00'),
+('Dicranaceae', 'Zhouxi', 'Chine', 'Visite de Dicranaceae dans la ville de Zhouxi en Chine', '43.00'),
+('Convolvulaceae', 'Darłowo', 'Pologne', 'Visite de Convolvulaceae dans la ville de Darłowo en Plogne', '19.00'),
+('Caryophyllaceae', 'As Samawah', 'Irak', 'Visite de Caryophyllaceae dans la ville de As Samawah', '16.00');
 
 -- --------------------------------------------------------
 
@@ -204,7 +204,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`IdUtilisateur`, `mdp`, `mail`, `IdRole`) VALUES
-(0, 'test', 'test@test.fr', 1);
+(0, 'test', 'test@test.fr', 1),
+(1, 'test', 'test2@test.fr', 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
