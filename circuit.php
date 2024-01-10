@@ -4,19 +4,19 @@ require('server_db.php');
 
 class circuit {
 
-    private $Id_Circ ;
+    private $Id_Circ;
     private $Descrip;
     private $Ville_Dep;
-    private $Pays_Dep ;
+    private $Pays_Dep;
     private $Pays_Arr;
     private $Ville_Arr;
-    private $Date_Dep ;
+    private $Date_Dep;
     private $Nb_Place_Dispo;
     private $Duree_Circ;
     private $Prix_Insc;
 
 
-    function __construct($Id_Circ, $Descrip, $Ville_Dep, $Pays_Dep, $Pays_Arr, $Ville_Arr, $Date_Dep, $Nb_Place_Dispo, $Duree_Circ, $Prix_Insc){
+    function __construct($Id_Circ, $Descrip, $Ville_Dep, $Pays_Dep, $Pays_Arr, $Ville_Arr, $Date_Dep, $Nb_Place_Dispo, $Duree_Circ, $Prix_Insc) {
         $this->Id_Circ = $Id_Circ;
         $this->Descrip = $Descrip;
         $this->Ville_Dep = $Ville_Dep;
