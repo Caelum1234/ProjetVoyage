@@ -64,6 +64,7 @@ require('includes/header.php');
         <h1 class="fw-light">Page admin</h1>
         <p>
           <a href="AjoutCircuitAdmin" class="btn btn-primary my-2">Créer un Circuit</a>
+          <a href="PageModifCircuit" class="btn btn-primary my-2">Modifier un Circuit</a>
         </p>
       </div>
     </div>
