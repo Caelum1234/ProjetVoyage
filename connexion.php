@@ -9,9 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
 require('server_db.php');
 
 $error = '';
-if (isset($_POST['submit'])) {
-
-  extract($_POST);
+if (isset($_POST['email']) && isset($_POST['password'])) {
 
   // Variables 
   $email = $_POST['email'];
@@ -44,6 +42,8 @@ if (isset($_POST['submit'])) {
           $stmt->execute();
           $result = $stmt->get_result();
 
+          
+
           if ($result->num_rows === 1) {
             // Mettre les informations récupérées dans la $_SESSION et variables 
             $row = $result->fetch_assoc();
@@ -51,35 +51,17 @@ if (isset($_POST['submit'])) {
             $idUser = $_SESSION['idUser'];
             $_SESSION['idRole'] = $row['IdRole'];
             $idRole = $_SESSION['idRole'];
+            $_SESSION['email'] = $_POST['email'];
+            var_dump($idUser,$idRole);
           }
         }
-
-        // Requête pour récupérer toutes les informations de la table client  
-        $info_client = "SELECT * FROM client WHERE IdUtilisateur = ? LIMIT 1 ";
-        $stmt = $connexion->prepare($info_client);
-
-        if ($stmt) {
-          $stmt->bind_param("s", $idUser);
-          $stmt->execute();
-          $result = $stmt->get_result();
-
-          if ($result->num_rows === 1) {
-            // Mettre les informations récupérées dans $_SESSION et variables 
-            $row = $result->fetch_assoc();
-            $_SESSION['nom'] = $row['nom'];
-            $nom = $_SESSION['nom'];
-            $_SESSION['prenom'] = $row['prenom'];
-            $prenom = $_SESSION['prenom'];
-          }
-        }
-
-        $_SESSION['email'] = $_POST['email'];
+        
 
         
-        if($roleUtilisateur == '0'){
+        if($idRole == '0'){
           header("Location: pageAccueilClient.php");
           exit();
-        } elseif($roleUtilisateur == '1'){
+        } elseif($idRole == '1'){
           header("Location: pageAccueilAdmin.php");
           exit();
         }

@@ -6,14 +6,35 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-
 require('server_db.php');
 
-// Récupération des données à afficher sur le dashboard
+// Requête pour récupérer toutes les informations du client  
+$info_client = "SELECT * FROM client WHERE IdUtilisateur = ? LIMIT 1 ";
+$stmt = $connexion->prepare($info_client);
+
+
+if ($stmt) {
+$stmt->bind_param("i", $_SESSION['idUser']);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 1) {
+    // Mettre les informations récupérées dans $_SESSION et variables 
+    $row = $result->fetch_assoc();
+    $_SESSION['nom'] = $row['Nom'];
+    $nom = $_SESSION['nom'];
+    $_SESSION['prenom'] = $row['Prenom'];
+    $prenom = $_SESSION['prenom'];
+}
+}
+
+
+// Récupération des données à afficher sur la page
 $circuitRequete = $connexion->query('SELECT * FROM circuit');
-$utilisateurRequete = $connexion->query('SELECT * FROM utilisateur');
+$reservationRequete = $connexion->query("SELECT * FROM reservation WHERE id_Client = {$_SESSION['idUser']}");
+
 $circuit = $circuitRequete->num_rows;
-$utilisateur = $utilisateurRequete->num_rows;
+$reservationClient = $reservationRequete->num_rows;
 
 require('includes/header.php');
 
@@ -25,8 +46,8 @@ require('includes/header.php');
       <div class="row">
         <div class="col-sm-4 offset-md-1 py-4">
           <ul class="list-unstyled">
-            <li><a href="edit/editCircuit.php" class="text-white">Circuit : <?php echo $circuit ?></a></li>
-            <li><a href="edit/editUser.php" class="text-white">Utilisateur : <?php echo $utilisateur ?></a></li>
+            <li><a href="edit/editCircuit.php" class="text-white">Circuit disponible : <?php echo $circuit ?></a></li>
+            <li><a href="edit/editUser.php" class="text-white">Mes reservations : <?php echo $reservationClient ?></a></li>
             <li><a href="connexion.php" class="text-white">Se déconnecter</a></li>
           </ul>
         </div>
@@ -52,9 +73,7 @@ require('includes/header.php');
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Page Client</h1>
-        <p>
-          Bienvenue sur notre site de voyage !
-        </p>
+        <h2>Bienvenue <?php echo $prenom ?></h2>
       </div>
     </div>
   </section>
