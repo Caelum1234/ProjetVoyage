@@ -44,7 +44,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   echo "<p>Ville de départ : $villeDep</p>";
   echo "<p>Pays de départ : $paysDep</p>";
   echo "<p>Ville d'arrivée : $villeArr</p>";
-  echo "<p>Pays d'arrivée : $villeArr</p>";
+  echo "<p>Pays d'arrivée : $paysArr</p>";
   echo "<p>Date de départ : $dateDep</p>";
   echo "<p>Nombre de place disponibles : $nbPlaceDisp</p>";
   echo "<p>Durée du circuit : $dureeCirc minutes</p>";
