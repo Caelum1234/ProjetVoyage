@@ -10,17 +10,6 @@
     exit();
   }
 
-  // exécuter la requête SQL pour récupérer les données de la table circuit
-$sql = "SELECT * FROM circuit";
-$result = mysqli_query($con, $sql);
-// vérifier la requête
-if (!$result) {
-  echo "Erreur : " . mysqli_error($con);
-  exit();
-}
-// afficher la liste des circuits
-echo "<ul>";
-
 ?> 
 
 
@@ -66,42 +55,12 @@ echo "<ul>";
   </div>
 </header>
 
-<?php
-
-$row = mysqli_fetch_assoc($result);
-$id = $row["Id_Circ"];
-$descri = $row["Descri"];
-$villeDep = $row["Ville_Dep"];
-$paysDep = $row["Pays_Dep"];
-$paysArr = $row["Pays_Arr"];
-$villeArr = $row["Ville_Arr"];
-$dateDep = $row["Date_Dep"];
-$nbPlaceDisp = $row["Nb_PlaceDisp"];
-$dureeCirc = $row["Duree_Circ"];
-$prixInsc = $row["Prix_Insc"];
-
-echo "<li>";
-echo "<h3>$id</h3>";
-echo "<p>Description : $descri</p>";
-echo "<p>Ville de départ : $villeDep</p>";
-echo "<p>Pays de départ : $paysDep</p>";
-echo "<p>Ville d'arrivée : $villeArr</p>";
-echo "<p>Pays d'arrivée : $villeArr</p>";
-echo "<p>Nombre de place disponibles : $nbPlaceDisp</p>";
-echo "<p>Durée du circuit : $dureeCirc minutes</p>";
-echo "<p>Prix d'inscription : $prixInsc €</p>";
-echo "</li>";
-echo "</ul>";
-// fermer la connexion
-mysqli_close($con);
-?>
-
 <main>
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Circuit 1 de " à "</h1>
+        <h1 class="fw-light">Mes circuits réservés</h1>
         <!-- <p>
           <a href="#" class="btn btn-primary my-2">Voir mes circuits réservés</a>
         </p> -->
@@ -134,4 +93,48 @@ mysqli_close($con);
 </main>
 
 
-<?php require_once('includes/footer.php'); ?>
+<?php require_once('includes/footer.php'); 
+// exécuter la requête SQL pour récupérer les données de la table circuit
+$sql = "SELECT * FROM reservation, utilisateur WHERE utilisateur.IdUtilisateur = reservation.Id_Client";
+$result = mysqli_query($con, $sql);
+// vérifier la requête
+if (!$result) {
+  echo "Erreur : " . mysqli_error($con);
+  exit();
+}
+// afficher la liste des circuits
+echo "<ul>";
+// parcourir les résultats de la requête
+while ($row = mysqli_fetch_assoc($result)) {
+  // stocker les données du circuit dans des variables
+  $idCirc = $row["Id_Circ"];
+  $idClient = $row["Id_Client"];
+  $date = $row["date_reserv"];
+  $prix = $row["Prix_tot"];
+  $idReserv = $row["IdReserv"];
+  $nbPlace = $row["Nb_places"];
+//   $Date_dep = $row["Date_Dep"];
+  // convertir l'image en une chaîne de caractères
+  //$image_data = base64_encode($image);
+  // afficher les données du circuit dans un élément HTML
+  echo "<li>";
+  echo "<h3>Circuit numéro $idCirc</h3>";
+  echo "<p>Date : $date</p>";
+  echo "<p>Prix : $prix</p>";
+//   echo "<p>Pays de départ : $paysDep</p>";
+//   echo "<p>Ville d'arrivée : $villeArr</p>";
+//   echo "<p>Pays d'arrivée : $villeArr</p>";
+//   echo "<p>Date de départ : $dateDep</p>";
+  echo "<p>Nombre de place réservées : $nbPlace</p>";
+//   echo "<p>Durée du circuit : $dureeCirc minutes</p>";
+//   echo "<p>Prix d'inscription : $prixInsc €</p>";
+//   echo "<form action='Circuit$idCirc.php'>
+//           <button type='submit' class='btn btn-sm btn-outline-secondary'>Voir</button>
+//         </form>";
+//   echo "<button>Réserver</button>";
+  echo "</li>";
+}
+echo "</ul>";
+// fermer la connexion
+mysqli_close($con);
+?>
