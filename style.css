@@ -1,0 +1,34 @@
+/* Définir la couleur de fond et la police du corps de la page */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Définir le style des titres */
+  h1, h2, h3 {
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Définir le style des paragraphes */
+  p {
+    text-align: center;
+    color: #555;
+    margin: 10px;
+  }
+
+  
+  /* Définir le style des boutons */
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Définir le style des boutons au survol */
+  button:hover {
+    background-color: #0069d9;
+  }
+  
