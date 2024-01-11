@@ -86,7 +86,7 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Circuit 1" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Circuit 1</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 1</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 1 de "" à ""</p>
+              <p class="card-text">Circuit 1 de Créteil à Lovran</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
@@ -101,7 +101,7 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 2</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 2 de "" à ""</p>
+              <p class="card-text">Circuit 2 de Khuean à Postira</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
@@ -116,7 +116,7 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 3</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 3 de "" à ""</p>
+              <p class="card-text">Circuit 3 de Zhishan à Long Hồ</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
@@ -132,7 +132,7 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 4</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 4 de "" à ""</p>
+              <p class="card-text">Circuit 4 de Majayjay à Bourges</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
@@ -147,7 +147,7 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 5</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 5 de "" à ""</p>
+              <p class="card-text">Circuit 5 de Estarreja à Yuza</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
@@ -162,7 +162,7 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 6</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 6 de "" à ""</p>
+              <p class="card-text">Circuit 6 de Tamamura à Yueyahe</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
