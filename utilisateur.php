@@ -1,5 +1,11 @@
 <?php
-session_start();
+
+// Vérifier si la session est active
+if (session_status() == PHP_SESSION_NONE) {
+    // Démarrer la session
+    session_start();
+}
+
 class Utilisateur {
     private $Id_Utilisateur;
     private $mail; 
@@ -38,7 +44,7 @@ class Utilisateur {
 
         require('server_db.php');
 
-        $queryUser = $connexion->prepare('SELECT * FROM circuit WHERE mail = ? AND mdp = ?');
+        $queryUser = $connexion->prepare('SELECT * FROM utilisateur WHERE mail = ? AND mdp = ?');
         $queryUser->execute([$this->getMail(),$this->getMdp()]);
         $toto = $queryUser->fetch();
         if(!empty($toto['Id_Utilisateur'])){
