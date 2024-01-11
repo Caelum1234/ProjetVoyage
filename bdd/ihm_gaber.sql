@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 11 jan. 2024 à 17:44
+-- Généré le : jeu. 11 jan. 2024 à 22:07
 -- Version du serveur : 8.0.31
--- Version de PHP : 8.2.0
+-- Version de PHP : 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `circuit`;
 CREATE TABLE IF NOT EXISTS `circuit` (
-  `Id_Circ` int NOT NULL,
+  `Id_Circ` int NOT NULL AUTO_INCREMENT,
   `Descri` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `Ville_Dep` varchar(50) DEFAULT NULL,
   `Pays_Dep` varchar(50) DEFAULT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `circuit` (
   `Duree_Circ` int DEFAULT NULL,
   `Prix_Insc` decimal(15,2) DEFAULT NULL,
   PRIMARY KEY (`Id_Circ`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `circuit`
@@ -52,7 +52,8 @@ INSERT INTO `circuit` (`Id_Circ`, `Descri`, `Ville_Dep`, `Pays_Dep`, `Pays_Arr`,
 (3, 'Passenger of amblnc/fire eng injured in traf, subs', 'Zhishan', 'China', 'Vietnam', 'Long Hồ', '11/23/2023', 72, 208, '45.00'),
 (4, 'Neoplasm of uncertain behavior of prostate', 'Majayjay', 'Philippines', 'France', 'Bourges', '4/26/2023', 63, 202, '36.00'),
 (5, 'Nondisp fx of olecran pro w intartic extn r ulna, ', 'Estarreja', 'Portugal', 'Japan', 'Yuza', '12/19/2023', 66, 87, '69.00'),
-(6, 'Dome fracture of acetabulum', 'Tamamura', 'Japan', 'China', 'Yueyahe', '6/28/2023', 59, 92, '49.00');
+(6, 'Dome fracture of acetabulum', 'Tamamura', 'Japan', 'China', 'Yueyahe', '6/28/2023', 59, 92, '49.00'),
+(7, 'test2', 'Paris', 'Fra', 'France', 'Lille', '2024-01-16', 12, 7, '54.00');
 
 -- --------------------------------------------------------
 
@@ -204,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`IdUtilisateur`, `mdp`, `mail`, `IdRole`) VALUES
-(4, '$2y$10$TLB8dozUlGF0VqHnkuGak.mL0fHoVrsjpnUekDDYDORnZGN62QAdq', 'test@test.fr', 0);
+(4, '$2y$10$TLB8dozUlGF0VqHnkuGak.mL0fHoVrsjpnUekDDYDORnZGN62QAdq', 'test@test.fr', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
