@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION['idUser'] = $utilisateur_id;
 
 
-      header("Location: PageCircuit.php");
+      header("Location: PageAccueilClient.php");
 
     } else {
 

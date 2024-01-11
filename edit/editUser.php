@@ -1,1 +1,1 @@
-<?php echo 'page pour le CRUD des utilisateurs' ?>
+<?php echo 'page pour le CRUD des Utilisateurs' ?>

@@ -74,9 +74,19 @@ if (isset($_POST['submit'])) {
         }
 
         $_SESSION['email'] = $_POST['email'];
+
+        
+        if($roleUtilisateur == '0'){
+          header("Location: pageAccueilClient.php");
+          exit();
+        } elseif($roleUtilisateur == '1'){
+          header("Location: pageAccueilAdmin.php");
+          exit();
+        }
+        
+
         // Redirection vers la page d'accueil
-        header("Location: pageCircuit.php");
-        exit();
+        
       } else {
         $error = "incorrect";
       }
