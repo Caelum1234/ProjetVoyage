@@ -9,24 +9,12 @@ if (session_status() == PHP_SESSION_NONE) {
 require('server_db.php');
 require_once('includes/header.php');
 
-if(isset($_SESSION['idRole'])){
-  $roleUtilisateur = $_SESSION['idRole'];
-  
-  if($roleUtilisateur == '1'){
-    include('dashboardAdmin.php');
-    exit();
-  } elseif($roleUtilisateur == '0'){
-    include('dashboardClient.php');
-    exit();
-  } else {
 
-  }
-} 
 
 
 // exécuter la requête SQL pour récupérer les données de la table circuit
 $sql = "SELECT * FROM circuit";
-$result = mysqli_query($con, $sql);
+$result = mysqli_query($connexion, $sql);
 // vérifier la requête
 if (!$result) {
   echo "Erreur : " . mysqli_error($con);

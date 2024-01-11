@@ -1,1 +1,9 @@
-<?php echo 'page pour le CRUD des Circuits' ?>
+<?php echo 'page pour le CRUD des Circuits' 
+
+
+
+
+
+
+?>
+
