@@ -90,8 +90,7 @@ require('includes/header.php');
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
                 </div>
               </div>
             </div>
@@ -105,8 +104,7 @@ require('includes/header.php');
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
                 </div>
               </div>
             </div>
@@ -120,8 +118,8 @@ require('includes/header.php');
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                 
                 </div>
               </div>
             </div>
@@ -136,8 +134,7 @@ require('includes/header.php');
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
                 </div>
               </div>
             </div>
@@ -151,8 +148,7 @@ require('includes/header.php');
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
                 </div>
               </div>
             </div>
@@ -166,8 +162,7 @@ require('includes/header.php');
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
                 </div>
               </div>
             </div>
