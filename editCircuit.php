@@ -28,13 +28,13 @@ $stmt = $con->prepare($sql); // Préparation de la requête
 $stmt->bind_param("ssssssiii", $description, $ville_depart, $pays_depart, $ville_arrivee, $pays_arrivee, $date_depart, $nb_place, $duree, $prix); // Liaison des paramètres avec les valeurs
 
 // Exécution de la requête SQL
-if ($stmt->execute()) { // Si la requête s'exécute avec succès
-  echo "Le circuit a été ajouté avec succès."; // Affichage du message de succès
-} else { // Sinon
-  echo "Erreur : " . $stmt->error; // Affichage du message d'erreur
+if ($stmt->execute()) { 
+  echo "Le circuit a été ajouté avec succès."; 
+} else { 
+  echo "Erreur : " . $stmt->error; 
 }
 
 // Fermeture de la connexion
-$stmt->close(); // Fermeture du statement
-$con->close(); // Fermeture de la connexion
+$stmt->close(); 
+$con->close(); 
 ?>
