@@ -1,3 +1,5 @@
+<link href="style.css" rel="stylesheet">
+
 <?php 
 
 // Vérifier si la session est active
