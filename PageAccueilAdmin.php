@@ -63,7 +63,7 @@ require('includes/header.php');
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Page admin</h1>
         <p>
-          <a href="#" class="btn btn-primary my-2">Créer un Circuit</a>
+          <a href="AjoutCircuitAdmin" class="btn btn-primary my-2">Créer un Circuit</a>
         </p>
       </div>
     </div>
