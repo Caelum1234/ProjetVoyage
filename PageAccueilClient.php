@@ -78,7 +78,7 @@ require('includes/header.php');
         $circuit_a_reserver = $_POST['circuit'];
         $placeDemander = $_POST['place_demander'];
     
-        // Requete pour recuperer l'ID de la seance sportive
+        // Requete pour recuperer l'ID du circuit
         $stmt = $connexion->prepare("SELECT Id_Circ, Prix_Insc FROM circuit WHERE Id_Circ = ?");
         $stmt->bind_param("i", $circuit_a_reserver);
         $stmt->execute();
