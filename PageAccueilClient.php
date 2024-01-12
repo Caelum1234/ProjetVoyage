@@ -31,7 +31,7 @@ if ($result->num_rows === 1) {
 
 // Récupération des données à afficher sur la page
 $circuitRequete = $connexion->query('SELECT * FROM circuit');
-$reservationRequete = $connexion->query("SELECT * FROM reservation WHERE id_Client = {$_SESSION['idUser']}");
+$reservationRequete = $connexion->query("SELECT * FROM reservation WHERE Id_Client = " . $_SESSION['idClient'] );
 
 $circuit = $circuitRequete->num_rows;
 $reservationClient = $reservationRequete->num_rows;
@@ -153,7 +153,7 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Circuit 1" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Circuit 1</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 1</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 1 de Créteil à Lovran</p>
+              <p class="card-text">Circuit 1 de "" à ""</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -168,7 +168,7 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 2</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 2 de Khuean à Postira</p>
+              <p class="card-text">Circuit 2 de "" à ""</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -183,7 +183,7 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 3</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 3 de Zhishan à Long Hồ</p>
+              <p class="card-text">Circuit 3 de "" à ""</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -199,11 +199,12 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 4</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 4 de Majayjay à Bourges</p>
+              <p class="card-text">Circuit 4 de "" à ""</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
                 </div>
               </div>
             </div>
@@ -213,11 +214,12 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 5</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 5 de Estarreja à Yuza</p>
+              <p class="card-text">Circuit 5 de "" à ""</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
                 </div>
               </div>
             </div>
@@ -227,11 +229,12 @@ require('includes/header.php');
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Circuit 6</text></svg>
             <div class="card-body">
-              <p class="card-text">Circuit 6 de Tamamura à Yueyahe</p>
+              <p class="card-text">Circuit 6 de "" à ""</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Réserver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button>
                 </div>
               </div>
             </div>

@@ -12,7 +12,7 @@ require('server_db.php');
 
 // Récupération des données à afficher sur la page
 $circuitRequete = $connexion->query('SELECT * FROM circuit');
-$reservationRequete = $connexion->query("SELECT * FROM reservation WHERE id_Client = {$_SESSION['idUser']}");
+$reservationRequete = $connexion->query("SELECT * FROM reservation WHERE Id_Client = " . $_SESSION['idClient'] );
 
 $circuit = $circuitRequete->num_rows;
 $reservationClient = $reservationRequete->num_rows;
@@ -57,9 +57,9 @@ $reservationClient = $reservationRequete->num_rows;
         <?php
 
         // Requete pour récupérer les réservations de l'utilisateur en cours
-        $sql = "SELECT * FROM reservation WHERE id_Client = ?";
+        $sql = "SELECT * FROM reservation WHERE Id_Client = ?";
         $stmt = $connexion->prepare($sql);
-        $stmt->bind_param("i", $_SESSION['idUser']);
+        $stmt->bind_param("i", $_SESSION['idClient']);
         $stmt->execute();
         $result = $stmt->get_result();
 
