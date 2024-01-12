@@ -1,14 +1,22 @@
 <?php 
 
- // require('circuit.php');
- require_once('includes/header.php');
-  // se connecter à la base de données
-  $con = mysqli_connect("localhost", "root", "", "IHM_Gaber");
-  // vérifier la connexion
-  if (mysqli_connect_errno()) {
-    echo "Échec de la connexion : " . mysqli_connect_error();
-    exit();
-  }
+// require('circuit.php');
+require_once('includes/header.php');
+
+require('server_db.php');
+
+// Récupération des données à afficher sur le dashboard
+$circuitRequete = $connexion->query('SELECT * FROM circuit');
+$etapeRequete = $connexion->query('SELECT * FROM etape');
+$lieuxVisiteRequete = $connexion->query('SELECT * FROM lieux_a_visiter');
+$utilisateurRequete = $connexion->query('SELECT * FROM utilisateur');
+$reservationRequete = $connexion->query('SELECT * FROM reservation WHERE Id_Client = ? ');
+
+$circuit = $circuitRequete->num_rows;
+$etape = $etapeRequete->num_rows;
+$lieuxVisiste = $lieuxVisiteRequete->num_rows;
+$utilisateur = $utilisateurRequete->num_rows;
+$reservationClient = $reservationRequete->num_rows;
 
 ?> 
 
@@ -28,15 +36,15 @@
         <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
       </symbol>
     </svg> 
-<header data-bs-theme="dark">
+    <header data-bs-theme="dark">
   <div class="collapse text-bg-dark" id="navbarHeader">
     <div class="container">
       <div class="row">
         <div class="col-sm-4 offset-md-1 py-4">
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Mon compte</a></li>
-            <li><a href="#" class="text-white">Nous contacter</a></li>
-            <li><a href="#" class="text-white">Se déconnecter</a></li>
+            <li><a href="edit/editCircuit.php" class="text-white">Circuit disponible : <?php echo $circuit ?></a></li>
+            <li><a href="CircuitsReserves.php" class="text-white">Mes reservations : <?php echo $reservationClient ?></a></li>
+            <li><a href="connexion.php" class="text-white">Se déconnecter</a></li>
           </ul>
         </div>
       </div>
@@ -44,7 +52,7 @@
   </div>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
-      <a href="PageCircuit.php" class="navbar-brand d-flex align-items-center">
+      <a href="" class="navbar-brand d-flex align-items-center">
       <img src= img/logoBDD.png width="40" height="40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle>
         <strong>EPSI Travel</strong> 
       </a>

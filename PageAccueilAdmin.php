@@ -32,7 +32,7 @@ require('includes/header.php');
       <div class="row">
         <div class="col-sm-4 offset-md-1 py-4">
           <ul class="list-unstyled">
-            <li><a href="edit/editCircuit.php" class="text-white">Circuits : <?php echo $circuit ?></a></li>
+            <li><a href="editCircuit.php" class="text-white">Circuits : <?php echo $circuit ?></a></li>
             <li><a href="edit/editEtape.php" class="text-white">Etapes : <?php echo $etape ?></a></li>
             <li><a href="edit/editLieuxVisite.php" class="text-white">Lieux de visite : <?php echo $lieuxVisiste ?></a></li>
             <li><a href="edit/editUser.php" class="text-white">Utilisateurs : <?php echo $utilisateur ?></a></li>

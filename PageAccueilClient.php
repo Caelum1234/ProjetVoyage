@@ -12,6 +12,7 @@ require('server_db.php');
 $info_client = "SELECT * FROM client WHERE IdUtilisateur = ? LIMIT 1 ";
 $stmt = $connexion->prepare($info_client);
 
+$idClient = $_SESSION['idUser'];
 
 if ($stmt) {
 $stmt->bind_param("i", $_SESSION['idUser']);
@@ -31,7 +32,7 @@ if ($result->num_rows === 1) {
 
 // Récupération des données à afficher sur la page
 $circuitRequete = $connexion->query('SELECT * FROM circuit');
-$reservationRequete = $connexion->query("SELECT * FROM reservation WHERE id_Client = {$_SESSION['idUser']}");
+$reservationRequete = $connexion->query("SELECT * FROM reservation WHERE id_Client = {$idClient}");
 
 $circuit = $circuitRequete->num_rows;
 $reservationClient = $reservationRequete->num_rows;
@@ -47,7 +48,7 @@ require('includes/header.php');
         <div class="col-sm-4 offset-md-1 py-4">
           <ul class="list-unstyled">
             <li><a href="edit/editCircuit.php" class="text-white">Circuit disponible : <?php echo $circuit ?></a></li>
-            <li><a href="edit/editUser.php" class="text-white">Mes reservations : <?php echo $reservationClient ?></a></li>
+            <li><a href="CircuitsReserves.php" class="text-white">Mes reservations : <?php echo $reservationClient ?></a></li>
             <li><a href="connexion.php" class="text-white">Se déconnecter</a></li>
           </ul>
         </div>
