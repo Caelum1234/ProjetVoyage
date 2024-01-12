@@ -101,7 +101,6 @@ mysqli_close($con);
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Circuit 1 de " à "</h1>
         <!-- <p>
           <a href="#" class="btn btn-primary my-2">Voir mes circuits réservés</a>
         </p> -->
