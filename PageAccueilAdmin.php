@@ -56,6 +56,35 @@ require('includes/header.php');
   </div>
 </header>
 
+<?php 
+
+if(isset($_GET['circuit']) && $_GET['circuit'] === 'add_success'){
+  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+          Circuit créer et rentré dans la BDD.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+}
+if(isset($_GET['circuit']) && $_GET['circuit'] === 'modifie_success'){
+  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+          Circuit modifié et actualisé dans la BDD.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+}
+if(isset($_GET['circuit']) && $_GET['circuit'] === 'add_error'){
+  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          Erreur lors de la modification du circuit.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+}
+if(isset($_GET['circuit']) && $_GET['circuit'] === 'modifie_error'){
+  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          Erreur lors de l\'ajout du circuit dans la BDD.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+}
+
+?>
+
 <main>
 
   <section class="py-5 text-center container">

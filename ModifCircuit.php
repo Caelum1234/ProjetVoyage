@@ -25,9 +25,9 @@ $stmt->bind_param("ssssssiiii", $description, $ville_depart, $pays_depart, $vill
 
 // Exécution de la requête SQL
 if ($stmt->execute()) { 
-  echo "Le circuit a été modifié avec succès."; 
-} else { // Sinon
-  echo "Erreur : " . $stmt->error; 
+  header("Location: PageAccueilAdmin.php?circuit=modifie_success");
+} else { 
+  header("Location: PageAccueilAdmin.php?circuit=modifie_error");
 }
 
 // Fermeture de la connexion

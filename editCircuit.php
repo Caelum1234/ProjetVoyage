@@ -27,10 +27,10 @@ $stmt = $con->prepare($sql); // Préparation de la requête
 $stmt->bind_param("ssssssiii", $description, $ville_depart, $pays_depart, $ville_arrivee, $pays_arrivee, $date_depart, $nb_place, $duree, $prix); // Liaison des paramètres avec les valeurs
 
 // Exécution de la requête SQL
-if ($stmt->execute()) { 
-  echo "Le circuit a été ajouté avec succès."; 
-} else { 
-  echo "Erreur : " . $stmt->error; 
+if ($stmt->execute()) {
+  header("Location: PageAccueilAdmin.php?circuit=add_success");
+} else {
+  header("Location: PageAccueilAdmin.php?circuit=add_error");
 }
 
 // Fermeture de la connexion
