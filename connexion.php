@@ -52,7 +52,26 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $_SESSION['idRole'] = $row['IdRole'];
             $idRole = $_SESSION['idRole'];
             $_SESSION['email'] = $_POST['email'];
-            var_dump($idUser,$idRole);
+          }
+        }
+
+        // Requête pour récupérer toutes les informations de l'utilisateur  
+        $info_client = "SELECT * FROM client WHERE IdUtilisateur = ? LIMIT 1 ";
+        $stmt = $connexion->prepare($info_client);
+
+        if ($stmt) {
+          $stmt->bind_param("s", $idUser);
+          $stmt->execute();
+          $result = $stmt->get_result();
+
+          
+
+          if ($result->num_rows === 1) {
+            // Mettre les informations récupérées dans la $_SESSION et variables 
+            $row = $result->fetch_assoc();
+            $_SESSION['idClient'] = $row['Id_Client'];
+            $idClient = $_SESSION['idClient'];
+
           }
         }
         

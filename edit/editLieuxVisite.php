@@ -1,1 +1,0 @@
-<?php echo 'page pour le CRUD des Lieux à visiter' ?>
