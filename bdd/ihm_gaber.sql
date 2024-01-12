@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 11 jan. 2024 à 22:07
+-- Généré le : jeu. 11 jan. 2024 à 22:16
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -70,14 +70,15 @@ CREATE TABLE IF NOT EXISTS `client` (
   `IdUtilisateur` int NOT NULL,
   PRIMARY KEY (`Id_Client`),
   UNIQUE KEY `IdUtilisateur` (`IdUtilisateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `client`
 --
 
 INSERT INTO `client` (`Id_Client`, `Nom`, `Prenom`, `Date_Naissance`, `IdUtilisateur`) VALUES
-(3, 'sineux', 'mathis', '2003-01-20', 4);
+(3, 'sineux', 'mathis', '2003-01-20', 4),
+(4, 'Admin', 'istrateur', '2024-01-12', 5);
 
 -- --------------------------------------------------------
 
@@ -163,6 +164,13 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   KEY `Id_Client` (`Id_Client`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Déchargement des données de la table `reservation`
+--
+
+INSERT INTO `reservation` (`Id_Circ`, `Id_Client`, `date_reserv`, `Prix_tot`, `IdReserv`, `Nb_places`) VALUES
+(1, 4, '2024-01-11', '12.00', 0, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -198,14 +206,15 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `IdRole` int NOT NULL,
   PRIMARY KEY (`IdUtilisateur`),
   KEY `IdRole` (`IdRole`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`IdUtilisateur`, `mdp`, `mail`, `IdRole`) VALUES
-(4, '$2y$10$TLB8dozUlGF0VqHnkuGak.mL0fHoVrsjpnUekDDYDORnZGN62QAdq', 'test@test.fr', 1);
+(4, '$2y$10$TLB8dozUlGF0VqHnkuGak.mL0fHoVrsjpnUekDDYDORnZGN62QAdq', 'test@test.fr', 1),
+(5, '$2y$10$XXicNSUwrf4kUsS9iczuveiFuOevxb9GmqFA6aQHBxSaxprYvl4BO', 'test2@test.fr', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
